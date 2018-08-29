@@ -1,6 +1,6 @@
 ---
 ####
-## clang-format version 5
+## clang-format version 6
 ## clang-format -style=webkit -dump-config > .clang-format
 ## clang-format -i *.h *.cpp
 ####
@@ -16,16 +16,16 @@ AlignAfterOpenBracket: Align
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
+#AllowShortFunctionsOnASingleLine: All
 #AllowShortIfStatementsOnASingleLine: false
 #AllowShortLoopsOnASingleLine: false
 #AlwaysBreakAfterDefinitionReturnType: None
 #AlwaysBreakAfterReturnType: None
 #AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: true
-BinPackParameters: false
 BinPackArguments: false
-BraceWrapping:
+BinPackParameters: false
+BraceWrapping:   
   AfterClass:      true
   AfterControlStatement: true
   AfterEnum:       true
@@ -34,6 +34,7 @@ BraceWrapping:
   AfterObjCDeclaration: true
   AfterStruct:     true
   AfterUnion:      true
+  AfterExternBlock: true
   BeforeCatch:     true
   BeforeElse:      true
   IndentBraces:    false
@@ -59,11 +60,12 @@ Cpp11BracedListStyle: true
 #DisableFormat:   false
 #ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: true
-#ForEachMacros:
+#ForEachMacros:   
 #  - foreach
 #  - Q_FOREACH
 #  - BOOST_FOREACH
-#IncludeCategories:
+IncludeBlocks:   Regroup
+#IncludeCategories: 
 #  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
 #    Priority:        2
 #  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
@@ -72,6 +74,7 @@ FixNamespaceComments: true
 #    Priority:        1
 #IncludeIsMainRegex: '(Test)?$'
 #IndentCaseLabels: false
+#IndentPPDirectives: None
 IndentWidth:     2
 #IndentWrappedFunctionNames: false
 #JavaScriptQuotes: Leave
@@ -92,6 +95,10 @@ NamespaceIndentation: None
 #PenaltyExcessCharacter: 1000000
 PenaltyReturnTypeOnItsOwnLine: 200
 #PointerAlignment: Left
+#RawStringFormats: 
+#  - Delimiter:       pb
+#    Language:        TextProto
+#    BasedOnStyle:    google
 #ReflowComments:  true
 #SortIncludes:    true
 #SortUsingDeclarations: true
